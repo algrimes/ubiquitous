@@ -27,11 +27,13 @@ returns:
 * require 'ubiquitous/base_model' in your /features/env.rb or spec_helper
 * create an empty UI Version of your model class and inheirit from Ubiquitous::BaseModel, i.e.
 
-      class MemberModel < Ubiquitous::BaseModel
-      end
+    class MemberModel < Ubiquitous::BaseModel
+    end
 * ...and new it up outside of your tests for use later
 
-     member = MemberModel.new(Capybara.current_session, index)
+    def member(index=0)
+       MemberModel.new(Capybara.current_session, index)
+	end
 
 
 
