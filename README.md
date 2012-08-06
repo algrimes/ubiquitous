@@ -29,10 +29,11 @@ returns:
 
     class MemberModel < Ubiquitous::BaseModel
     end
+
 * ...and new it up outside of your tests for use later
 
     def member(index=0)
-       MemberModel.new(Capybara.current_session, index)
+        MemberModel.new(Capybara.current_session, index)
 	end
 
 
