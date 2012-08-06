@@ -1,5 +1,7 @@
 A gem to help you generate an acceptance test DSL from your application domain, which then uses Rails ActionView convention of element id generation to find elements in the UI matching the object and method you have called. An example:
 
+Say you have a rails model, called Member. Calling the following code from your test:
+
 
     member.first_name
 
@@ -24,17 +26,14 @@ returns:
 
 * add 'ubiquitous' to your gemfile
 * require 'ubiquitous/instance_tag' in /config/environment.rb
-* require 'ubiquitous/base_model' in your /features/env.rb or spec_helper
-* create an empty UI Version of your model class and inheirit from Ubiquitous::BaseModel, i.e.
+* add the following to your env.rb or spec_helper:
 
-    class MemberModel < Ubiquitous::BaseModel
-    end
+    require 'ubiquitous/base_model'
+	require 'ubiquitous/model_helpers'
+	World(Ubiquitous::ModelHelpers)
 
-* ...and new it up outside of your tests for use later
 
-    def member(index=0)
-        MemberModel.new(Capybara.current_session, index)
-	end
+
 
 
 
