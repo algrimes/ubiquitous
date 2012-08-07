@@ -1,5 +1,5 @@
 # Copyright 2012 ThoughtWorks, Inc. Licensed under the MIT License
 
 module Ubiquitous
-  VERSION = "0.0.2"
+  VERSION = "0.0.3"
 end
