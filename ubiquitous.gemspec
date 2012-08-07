@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Ubiquitous::VERSION
   s.authors     = ["algrimes"]
   s.email       = ["agrimes@thoughtworks.com"]
-  s.homepage    = ""
+  s.homepage    = "http://www.github.com/algrimes/ubiquitous"
   s.summary     = %q{Support to generate a test DSL from your Rails domain objects}
   s.description = %q{The lofty ambitions of this gem are to unify your ui test and production
                     code's references to its domain model, and to find elements in your UI
