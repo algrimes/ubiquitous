@@ -1,4 +1,4 @@
-A gem to help you generate an acceptance test DSL from your application domain, which then uses Rails ActionView convention of element id generation to find elements in the UI matching the object and method you have called. An example:
+A gem to help you generate an acceptance test DSL from your application domain, which then re-uses Rails ActionView mechanism of element id generation to find elements in the UI matching the object and method you have called, without any boilerplate.  An example:
 
 Say you have a rails model, called Member. Calling the following code from your test:
 
@@ -29,7 +29,9 @@ returns:
 * add the following to your env.rb or spec_helper:
 
     require 'ubiquitous/base_model'
+
 	require 'ubiquitous/model_helpers'
+	
 	World(Ubiquitous::ModelHelpers)
 
 
