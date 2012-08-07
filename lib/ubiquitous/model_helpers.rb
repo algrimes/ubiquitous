@@ -1,3 +1,5 @@
+# Copyright 2012 ThoughtWorks, Inc. Licensed under the MIT License
+
 module Ubiquitous
 
   module ModelHelpers
@@ -12,7 +14,7 @@ module Ubiquitous
   models.each do |model|
     method_name = (model.to_s.downcase).to_sym
     send :define_method, method_name do |index=0|
-      "#{model}Model".constantize.new(Capybara.current_session, index)
+      "#{model}Model".constantize.new(Capybara.current_session, index, model.new)
     end
   end
 
