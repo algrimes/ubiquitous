@@ -9,11 +9,7 @@ module ActionView
         "#{sanitized_object_name}_0_#{sanitized_method_name}"
       end
 
-      # No alteration, just making it public
-
-      def tag_id_with_index(index)
-        "#{sanitized_object_name}_#{index}_#{sanitized_method_name}"
-      end
+      public :tag_id_with_index
 
     end
 
