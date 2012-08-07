@@ -32,7 +32,13 @@ returns:
 
 	require 'ubiquitous/model_helpers'
 	
+then for cucumber:
+	
 	World(Ubiquitous::ModelHelpers)
+	
+and for rspec:
+
+    include Ubiquitous::ModelHelpers
 
 
 
