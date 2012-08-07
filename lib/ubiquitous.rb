@@ -5,16 +5,8 @@ require 'ubiquitous/base_model'
 
 module Ubiquitous
 
-  @finder_mechanism = :id
+  class << self; attr_accessor :finder_mechanism end
 
-  def self.finder_mechanism=(finder_mechanism)
-    @finder_mechanism  = finder_mechanism
-  end
-
-
-  def self.finder_mechanism
-    @finder_mechanism
-  end
 
 
 end
