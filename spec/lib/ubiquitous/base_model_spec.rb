@@ -1,4 +1,4 @@
-require 'ubiquitous/base_model'
+require 'ubiquitous'
 require 'action_view'
 require 'action_view/helpers'
 
@@ -40,6 +40,22 @@ describe Ubiquitous::BaseModel do
 
   end
 
+  it "should retrieve finder mechanism when specified by config" do
+    @instance_tag_mock.should_receive(:tag_id_with_index).and_return("member_0_surname")
+    ActionView::Helpers::InstanceTag.should_receive(:new).and_return(@instance_tag_mock)
+
+    Ubiquitous.finder_mechanism = :class
+    @session.should_receive(:find).with(:class, "member_0_surname")
+
+    class Member
+      def surname
+      end
+    end
+
+    member = Ubiquitous::BaseModel.new(@session, 0, Member.new)
+    member.surname
+
+  end
 
 end
 

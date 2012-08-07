@@ -1,5 +1,6 @@
+require 'ubiquitous'
 require 'ubiquitous/model_helpers'
-require 'ubiquitous/base_model'
+
 
 describe Ubiquitous::ModelHelpers do
 

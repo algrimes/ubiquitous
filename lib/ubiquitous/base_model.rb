@@ -13,7 +13,7 @@ module Ubiquitous
     def method_missing(method_name, *args, &block)
       @method_name = method_name
       assert_presence_of_method_on_model(@method_name)
-      @session.find(:id, element_namespace)
+      @session.find(finder_mechanism, element_namespace)
     end
 
     private
@@ -27,6 +27,10 @@ module Ubiquitous
     def element_namespace
       require 'action_view/helpers/form_helper'
       ActionView::Helpers::InstanceTag.new(@normalised_model_name, @method_name, nil, nil).tag_id_with_index(@index)
+    end
+
+    def finder_mechanism
+      Ubiquitous.finder_mechanism || :id
     end
 
   end

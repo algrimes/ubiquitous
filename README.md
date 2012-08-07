@@ -28,7 +28,7 @@ returns:
 * require 'ubiquitous/instance_tag' in /config/environment.rb
 * add the following to your env.rb or spec_helper:
 
-    require 'ubiquitous/base_model'
+    require 'ubiquitous'
 
 	require 'ubiquitous/model_helpers'
 	
@@ -39,6 +39,19 @@ then for cucumber:
 and for rspec:
 
     include Ubiquitous::ModelHelpers
+
+## Configuration:
+
+If you have configured custom finders for capybara, like using name, rather than id:
+    
+	Capybara.add_selector(:name) do
+	    xpath { |id| XPath.descendant[XPath.attr(:name) == id.to_s] }
+	end
+	
+Then configure Ubiquitous in your env.rb/spec_helper:
+
+    Ubiquitous.finder_mechanism = :name  
+	 
 
 
 

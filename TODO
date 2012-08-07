@@ -1,6 +1,4 @@
-1. Extract default finder, "id", into configuration so folks wishing to look for elements by a different kind of attribute can do so
-
-2. Provide stand-alone view helper methods so other non-rails websites can generate attributes for their markup based on the configured finder
+1. Provide stand-alone view helper methods so other non-rails websites can generate attributes for their markup based on the configured finder
  
-3. Decouple from Capybara - provide common interface over element finder and bring in WebDriver
+2. Decouple from Capybara - provide common interface over element finder and bring in WebDriver
    by optional definition of Browser object in a config setting
