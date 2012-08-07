@@ -30,8 +30,10 @@ describe Ubiquitous::BaseModel do
     end
 
     thingy = Ubiquitous::BaseModel.new(@session, 0, Thingy.new)
+
     begin
       thingy.surname
+      raise Exception, "this error means the expected exception wasn't thrown. oh dear."
     rescue => e
      e.message.should == "this method, \"surname\" doesn't exist on the Thingy model"
     end
