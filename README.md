@@ -45,7 +45,7 @@ and for rspec:
 If you have configured custom finders for capybara, like using name, rather than id:
     
 	Capybara.add_selector(:name) do
-	    xpath { |id| XPath.descendant[XPath.attr(:name) == id.to_s] }
+	    xpath { |name| XPath.descendant[XPath.attr(:name) == name.to_s] }
 	end
 	
 Then configure Ubiquitous in your env.rb/spec_helper:
