@@ -9,9 +9,8 @@ Gem::Specification.new do |s|
   s.email       = ["agrimes@thoughtworks.com"]
   s.homepage    = "http://www.github.com/algrimes/ubiquitous"
   s.summary     = %q{Support to generate a test DSL from your Rails domain objects}
-  s.description = %q{The lofty ambitions of this gem are to unify your ui test and production
-                    code's references to its domain model, and to find elements in your UI
-                    that represent that model, without additional code. }
+  s.description = %q{Unify your ui test and production domain model, to find elements in your UI 
+                      that represent that model, without additional code. }
 
   s.rubyforge_project = "ubiquitous"
 
